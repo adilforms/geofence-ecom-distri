@@ -4,8 +4,8 @@ from geopy.distance import geodesic
 import json
 # Email configuration
 sender_email = 'adilforms@gmail.com'
-sender_password = 'ogwq jyek krpt clkq'
-recipient_phone = '7703137727'  # Replace with the recipient's phone number
+sender_password = 'asd asdfasd asd fas dvafsd v'
+recipient_phone = '7703137797'  # Replace with the recipient's phone number
 recipient_carrier_domain = 'vtext.com'  # Replace with the recipient's carrier's email domain
 
 # Define the target location (latitude and longitude)
