@@ -1,0 +1,46 @@
+<!DOCTYPE html> {% load widget_tweaks %}
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>RTW Shop</title>
+    <style media="screen">
+        div#admin-box-holder {
+            justify-content: center;
+            display: flex;
+            align-items: center;
+            padding: 2em 0;
+        }
+    </style>
+</head>
+
+<body>
+    {% include "ecom/navbar.html" %}
+    <div class="container">
+        <div class="row" id="admin-box-holder">
+            <div class="col-md-6">
+                <div class="panel">
+                    <div class="panel-body">
+                        <form class="box" method="post">
+                            {% csrf_token %}
+                            <h1>Admin Login</h1>
+                            <div class="form-group">
+                                {% render_field form.username class="form-control" placeholder="Username" autocomplete="off" %}
+                            </div>
+                            <div class="form-group">
+                                {% render_field form.password class="form-control" placeholder="Password" %}
+                            </div>
+                            <center><input type="submit" class="btn btn-sm btn-primary" name="" value="Login"></center>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br> {% include "ecom/footer.html" %}
+</body>
+
+</html>
