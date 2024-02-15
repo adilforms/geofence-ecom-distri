@@ -1,0 +1,16 @@
+FROM postgres:11
+MAINTAINER Mostafa Albana
+
+EXPOSE 5432:5433
+ENV PGDATA /var/lib/postgresql-static/data
+VOLUME  ["$PGDATA"]
+RUN mkdir -p $PGDATA
+
+ENV DATABASE_SCHEMA=ecommerce
+ENV DATABASE_PORT=5432
+ENV DATABASE_USER=ecommerce
+ENV DATABASE_PASSWORD=admin123
+
+RUN echo "psql -U postgres --command \"CREATE ROLE $DATABASE_USER LOGIN PASSWORD '$DATABASE_PASSWORD' SUPERUSER INHERIT CREATEDB CREATEROLE NOREPLICATION;\" && \
+          psql -U postgres --command \" CREATE DATABASE $DATABASE_SCHEMA WITH OWNER $DATABASE_USER ENCODING 'UTF8';\" "> /docker-entrypoint-initdb.d/setup.sh
+
